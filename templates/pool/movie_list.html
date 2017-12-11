@@ -1,0 +1,8 @@
+<h1>Movies</h1>
+<ul>
+{% for movie in object_list %}
+    <li>{{ movie.title }} - {{ movie.year }} - {{ movie.overview }} - {{ movie.trailer_url }}</li>
+{% empty %}
+    <li>No movies yet.</li>
+{% endfor %}
+</ul>
