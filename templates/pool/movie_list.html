@@ -1,7 +1,11 @@
+
 <h1>Movies</h1>
 <ul>
 {% for movie in object_list %}
-    <li>{{ movie.title }} - {{ movie.year }} - {{ movie.overview }} - {{ movie.trailer_url }}</li>
+    <a href="{{ movie.trailer_url }}">{{ book.title }}</a>
+    <li>{{ movie.overview }}</li>
+    <h1>Nombre de vote {{movie.votemovie_set.count}}</h1>
+    <h1>Nombre de séances prévues {{movie.showing_set.count}}</h1>
 {% empty %}
     <li>No movies yet.</li>
 {% endfor %}

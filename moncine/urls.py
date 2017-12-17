@@ -23,9 +23,11 @@ from pool import views as pool_views
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
+    # url(r'^vote/movie/$', pool_views.vote_movie_form, name='vote_movie'),
     url(r'^add/(?P<table_name>\w+)/$', pool_views.populate_db, name='populate-db'),
     url(r'^movies/$', pool_views.MovieListView.as_view(), name='movie-list'),
     url(r'^signup/$', login_views.signup, name='signup'),
+    url(r'^movie_details/$', pool_views.MovieDetailView, name='movie_details'),
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^admin/', admin.site.urls),

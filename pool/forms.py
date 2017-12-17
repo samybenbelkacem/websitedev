@@ -1,20 +1,26 @@
 from django.forms import ModelForm
-from pool.models import Movie, Cinema, Showing
+from pool.models import Movie, Cinema, Showing, VoteMovie
 
 
 class MovieForm(ModelForm):
      class Meta:
-         model = Movie
-         fields = ['title', 'year', 'overview', 'trailer_url', 'language', 'poster']
+        model = Movie
+        fields = '__all__'
 
 
 class CinemaForm(ModelForm):
      class Meta:
-         model = Cinema
-         fields = ['user', 'name', 'adress', 'zip_code', 'nbr_rooms', 'siren']
+        model = Cinema
+        fields = '__all__'
 
 
 class ShowingForm(ModelForm):
      class Meta:
-         model = Showing
-         fields = ['cinema', 'movie', 'schedule']
+        model = Showing
+        fields = '__all__'
+
+
+class VoteMovieForm(ModelForm):
+    class Meta:
+        model = VoteMovie
+        fields = ['movie']
